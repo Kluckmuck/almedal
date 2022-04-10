@@ -1,3 +1,8 @@
+# Almedal
+
+Displays departures (buss, trams, trains, etc.) in Gothenburg.
+Uses [Västtrafik API](https://developer.vasttrafik.se/portal/#/) to fetch information.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
