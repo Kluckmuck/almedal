@@ -1,11 +1,11 @@
 import "./App.css";
-import SearchComponent from "./search/SearchComponent";
+import { SearchContainer } from "./search/container/SearchContainer";
 
 function App() {
   return (
     <div className="App">
       <h1>Almedal</h1>
-      <SearchComponent />
+      <SearchContainer />
     </div>
   );
 }

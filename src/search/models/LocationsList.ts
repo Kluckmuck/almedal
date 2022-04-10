@@ -1,9 +1,9 @@
 export type StopLocation = {
   name: string;
-  lon: string;
-  lat: string;
+  lon?: string;
+  lat?: string;
   id: string;
-  idx: string;
+  idx?: string;
 };
 
 export type CoordLocation = {
@@ -22,6 +22,6 @@ export type LocationList = {
   CoordLocation: CoordLocation[];
 };
 
-export type RootObject = {
+export type RootObjectLocationList = {
   LocationList: LocationList;
 };

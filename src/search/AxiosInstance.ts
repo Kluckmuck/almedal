@@ -1,6 +1,6 @@
 import axios from "axios";
-import TokenService from "./TokenService";
-import VastTrafikService from "./VastTrafikService";
+import TokenService from "./service/TokenService";
+import VastTrafikService from "./service/VastTrafikService";
 
 export const axiosInstance = axios.create({
   baseURL: "https://api.vasttrafik.se/",

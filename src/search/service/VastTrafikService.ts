@@ -1,6 +1,7 @@
 import qs from "qs";
-import { axiosInstance } from "./AxiosInstance";
-import { RootObject } from "./models/LocationsList";
+import { axiosInstance } from "../AxiosInstance";
+import { RootObjectDepartureBoard } from "../models/DepartureBoard";
+import { RootObjectLocationList } from "../models/LocationsList";
 import { Token } from "./TokenService";
 
 class VastTrafikService {
@@ -29,9 +30,25 @@ class VastTrafikService {
   };
 
   searchLocations = (location: string) => {
-    return new Promise<RootObject>((resolve, reject) => {
+    return new Promise<RootObjectLocationList>((resolve, reject) => {
       axiosInstance
         .get(`/bin/rest.exe/v2/location.name?input=${location}&format=json`)
+        .then((response) => {
+          resolve(response.data);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  };
+
+  getDepartures = (id: string, date: Date = new Date()) => {
+    const isoDate = date.toISOString();
+    return new Promise<RootObjectDepartureBoard>((resolve, reject) => {
+      axiosInstance
+        .get(
+          `bin/rest.exe/v2/departureBoard?id=${id}&date=${isoDate}&time=21%3B44&format=json`
+        )
         .then((response) => {
           resolve(response.data);
         })
